@@ -1,0 +1,5 @@
+#!/bin/bash
+echo x vaut la valeur \: $1
+echo $1 + 1 \= \n
+expr $1 + 1
+
