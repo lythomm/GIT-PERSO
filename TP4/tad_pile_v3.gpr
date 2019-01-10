@@ -1,0 +1,9 @@
+project TAD_Pile_V3 is
+
+   for Main use ("run_all_tests.adb");
+
+   package Compiler is
+   end Compiler;
+
+end TAD_Pile_V3;
+
