@@ -82,7 +82,7 @@ public class Monome {
         if ( this.exposant == 0 ) {
         	return new Monome (0.0F,0);
         }else{
-        	return new Monome (this.coefficient * this.exposant, this.exposant -= 1);
+        	return new Monome (this.coefficient * this.exposant, this.exposant - 1);
         }
     }
 

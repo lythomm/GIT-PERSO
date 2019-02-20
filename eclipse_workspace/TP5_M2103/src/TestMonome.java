@@ -7,15 +7,18 @@ import org.junit.Test;
 public class TestMonome {
 
 	private Monome m;
+	private Monome p;
 	
 	@Before
 	public void SetUp() throws Exception {
 		this.m = new Monome(2.0F, 3);
+		this.p = new Monome(0.0F, 0);
 	}
 	
 	@After
 	public void tearDown() throws Exception {
 		this.m = null;
+		this.p = null;
 	}
 
 	@Test public void testCoefficient() {
@@ -31,7 +34,7 @@ public class TestMonome {
 	}
 	
 	@Test public void testEstNulFALSE() {
-		assertTrue(this.m.estNul());
+		assertTrue(this.p.estNul());
 	}
 	
 	@Test public void testSomme() {
@@ -47,13 +50,13 @@ public class TestMonome {
 	}
 	
 	@Test public void testDérivéeExposantNonNull() {
-		assertEquals(6.0F, this.m.dérivée().getCoefficient(),0.0F);
+		assertEquals(6.0F, this.m.dérivée().getCoefficient(),0);
 		assertEquals(2, this.m.dérivée().getExposant());
 	}
 	
 	@Test public void testDérivéeExposantNull() {
-		assertEquals(0.0F, this.m.getCoefficient(),0.0F);
-		assertEquals(0, this.m.getExposant());
+		assertEquals(0.0F, this.p.getCoefficient(),0.0F);
+		assertEquals(0, this.p.getExposant());
 	}
 	
 	@Test(expected = ArithmeticException.class)
@@ -65,5 +68,18 @@ public class TestMonome {
 	@Test(expected = IllegalArgumentException.class)
 	public void testExposantException() {
 		Monome m1 = new Monome(2.0F, -1);
+	}
+	
+	@Test public void testToString() {
+		assertEquals("2.0xe3", this.m.toString());
+	}
+	
+	@Test public void testToStringEstNul() {
+		assertEquals("0", this.p.toString());
+	}
+	
+	@Test public void testToStringExposantNul() {
+		Monome y = new Monome(2.0F,0);
+		assertEquals("2.0", y.toString());
 	}
 }
