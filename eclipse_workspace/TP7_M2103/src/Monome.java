@@ -64,7 +64,7 @@ public class Monome {
         return new Monome(this.getCoefficient() + m.getCoefficient(),
                 this.getExposant());
     }
-
+    
     /**
      * calcule le produit de deux monômes
      * 
