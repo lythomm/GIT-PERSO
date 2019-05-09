@@ -1,0 +1,85 @@
+﻿#include <stdio.h>
+#define TAILLE_TABLEAU 5
+
+void main() {
+	int t[TAILLE_TABLEAU];
+	t[0] = 1;
+	printf("Case[0] : %d\n", t[0]);
+	for ( int i = 1 ; i < TAILLE_TABLEAU ; i++)
+	{
+		t[i] = i+1;
+	}
+	for ( int i = 0 ; i < TAILLE_TABLEAU ; i++)
+	{
+		printf("t[%d] : %d\n", i, t[i]);
+	}
+	printf("%d\n", t);
+	printf("%d\n", &t[4]);
+	int tailleInt = sizeof(int);
+	int tailleFloat = sizeof(float);
+	int tailleDouble = sizeof(double);
+	int tailleLong = sizeof(long);
+	int tailleShort = sizeof(short);
+	int tailleTableau = sizeof(t);
+	int tailleCaseTableau = sizeof(t[TAILLE_TABLEAU]);
+	printf("Taille d'un entier(int) en octet : %d\n", tailleInt);
+	printf("Taille d'un réel(float) en octet : %d\n", tailleFloat);
+	printf("Taille d'un réel(double) en octet : %d\n", tailleDouble);
+	printf("Taille d'un entier(long) en octet : %d\n", tailleLong);
+	printf("Taille d'un entier(short) en octet : %d\n", tailleShort);
+	printf("Taille du tableau en octet : %d\n", tailleTableau);
+	printf("Adresse de tailleInt : %p\n", &tailleInt);
+	for ( int i = 0 ; i < TAILLE_TABLEAU ; i++ )
+	{
+		printf("Adresse t[%d] : %p\n", i, &t[i]);
+	}
+	long t2[TAILLE_TABLEAU];
+	for ( int i = 0 ; i < TAILLE_TABLEAU ; i++)
+	{
+		t2[i] = i+1;
+		printf("Adresse t2[%d] : %p\n", i, &t2[i]);
+	}
+	int a = 5;
+	int b = 0;
+	printf("a : %lu et b : %lu\n", &a, &b);
+	int* p;
+	p = &a;
+	printf("Taille de p : %d\n", sizeof(p));
+	printf("Taille d'un long* : %d\n", sizeof(long*));
+	printf("Taille d'un short* : %d\n", sizeof(short*));
+	printf("Valeur de p : %lu\n", p);
+	printf("Valeur référencée par p : %d\n", *p);
+	*p = 9;
+	printf("Valeur de a : %d\n", a);
+	printf("Adresse de TAILLE_TABLEAU : %lu\n", TAILLE_TABLEAU);
+	printf("Adresse de t : %lu\n", &t); 
+	printf("Valeur de t : %lu\n", t);
+	t2[3] = 10;
+	long* p2 = &t2[3];
+	printf("Valeur de t2[3] = %d\n", t2[3]);
+	printf("Valeur référencée par p2 : %d\n", *p2);
+	p2[-3] = 10;
+	p2[-2] = 12;
+  	p2[-1] = 96;
+  	p2[0] = 120;
+  	p2[1] = 62;  
+	for(int i = 0; i < TAILLE_TABLEAU; i++){
+	    printf("t2[%d] : %d\n", i, t2[i]); 	 
+	}
+	p[1] = 15;
+	p[3] = 5;
+  	p[5] = 9;
+  	p[7] = 86;
+  	p[9] = 31;  
+	for(int i = 0; i < TAILLE_TABLEAU; i++){
+	    printf("t2[%d] : %d\n", i, t2[i]); 	 
+	}
+	p2[0] = 20;
+	p2[1] = 30;
+  	p2[2] = 40;
+  	p2[3] = 50;
+  	p2[4] = 60;  
+	for(int i = 0; i < TAILLE_TABLEAU; i++){
+	    printf("t[%d] : %d\n", i, t[i]); 	 
+	}	
+}

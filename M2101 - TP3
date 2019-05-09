@@ -1,0 +1,56 @@
+﻿#include <stdio.h>
+
+void setInt(int newValue, int input);
+void setPointerInt(int newValue, int* input);
+
+void main() {
+	int a = 0;
+	//setInt(12,a);
+	printf("Valeur de a : %d\n",a);
+	printf("Adresse de a : %lu\n",&a);
+	setPointerInt(12,&a);
+	printf("Valeur de a : %d\n",a);
+	int nb[] = {1,2,3,4};
+	printf("Taille du tableau %d\n", sizeof(nb));
+	char message[] = "Hello World !";
+	printf("Message: %s\n", message);
+	printf("Taille de message: %d\n", sizeof(message));
+	message[1] = 'o';
+	message[4] = 'e';
+	printf("Message modifie: %s\n", message);
+	char* message2 = "Hello World !";
+	printf("Message2: %s\n", message2);
+	printf("Taille de message2: %d\n", sizeof(message2));
+	message2 = message;
+	printf("message2 : %s\n", message2);  
+	printf("*message : %c\n", *message2);
+	printf("message2[0] : %c\n", message2[0]);
+	message2 ++;
+	*message2 = 'e';
+	message2 = message2 + 3;
+	*message2 = 'o';
+	message2 = message2 - 4;
+	printf("*message : %c\n", *message2);
+	printf("message2 : %s\n", message2); 
+	printf("Saisir un caractere au clavier\n");
+	char c = getchar();
+	printf("Caractere saisi : %c\n", c);
+	c = getchar();
+	printf("Caractère saisi : %c\n", c);
+	c = getchar();
+	printf("Caractère saisi : %c\n", c);
+}
+
+void setInt(int newValue, int input) {
+	input = newValue;
+	printf("Adresse de input : %lu\n", &input);
+}
+
+void setPointerInt(int newValue, int* input) {
+	*input = newValue;
+	//printf("Valeur de input : %d\n", input);
+	printf("Adresse de input : %lu\n", input);
+	//printf("Valeur de newValue : %d\n", newValue);
+	printf("Adresse de newValue : %lu\n", &newValue);
+}
+
